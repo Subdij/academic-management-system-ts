@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Personnel_1 = require("./Personnel");
+var Etudiant_1 = require("./Etudiant");
+var Cours_1 = require("./Cours");
+var Notation_1 = require("./Notation");
+var coursMaths = new Cours_1.Cours(1, "Front-end");
+console.log("Cours: ".concat(coursMaths.getLibelleCours()));
+var noteMaths = new Notation_1.Notation(coursMaths, 15.5, 2);
+console.log("Note en Front: ".concat(noteMaths.getNote(), ", Coef: ").concat(noteMaths.getCoef()));
+var personnel = new Personnel_1.Personnel(1, "Mme leboi", "Alice", 35, "alice@example.com", "0123456789");
+console.log(personnel.afficheFiche());
+var etudiant = new Etudiant_1.Etudiant(2, "ziyad", "chaabi", 21, "ziyad.cha@example.com", "9876543210", "2002", "MMI", [noteMaths]);
+console.log(etudiant.afficheFiche());
+console.log("Moyenne de l'\u00E9tudiant: ".concat(etudiant.calculerMoyenneEtud()));
